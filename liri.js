@@ -57,21 +57,20 @@ else if(a === "spotify-this-song"){
 }
 	
 else if(a === "movie-this"){
-		var request = require("request");
+	var request = require("request");
 
-		b = process.argv[2]+"+"+ process.argv[3]+ "+" +process.argv[4];
-		var movieName = b;
-		// ...
+	var movieName = b;
+	// ...
 
 
-		// Then run a request to the OMDB API with the movie specified
-		var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
-		request(queryUrl, function(error, response, body){
+	// Then run a request to the OMDB API with the movie specified
+	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
+	request(queryUrl, function(error, response, body){
 
-			if(!error && response.statusCode=== 200){
-				console.log("release Year: " + JSON.parse(body).Year);
-			}
-		})
+		if(!error && response.statusCode=== 200){
+			console.log("release Year: " + JSON.parse(body).Year);
+		}
+	})
 }
 
 else if(a === "do-what-it-says"){
